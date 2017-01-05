@@ -38,10 +38,12 @@
 				foreach ($rules as $rule) {
 					if (isset($rule['params'])) {
 						$this->$rule['rule']($element, $rule['params']);
-                        $this->renderErrorMessages();
+                        $this->renderErrorMessages();                        
 					} else {
 						$this->$rule['rule']($element);
                         $this->renderErrorMessages();
+                        
+                        
 					}
 				}
 			}
@@ -50,6 +52,12 @@
         public function addRule(Array $rule)
         {
         	$this->rules[] = $rule;
+            return $this->rules;
+        }
+
+        public function getRules()
+        {
+            return $this->rules;
         }
         
         public function renderErrorMessages($openTag = '<li>', $closeTag = '</li>')
@@ -82,7 +90,7 @@
         
         public function is_required($target)
         {
-        	if (!$target->getValue() && $target->getValue() == '') {
+        	if (!$target->getValue() || $target->getValue() == '' || is_null($target->getValue())) {
         		$target->setErrorMessage("O campo ".  $target->getName()  ." é obrigatório!");
 	            $this->fieldsWithError[] = $target;
 	            $this->messages[$target->getName()] = "O campo {$target->getName()} é obrigatório!";
@@ -92,7 +100,7 @@
         		return true;
         }
         
-        protected function is_numeric($target)
+        public function is_numeric($target)
         {
         	if (!is_numeric($target->getValue())) {
         		$target->setErrorMessage("O campo ".	$target->getName()	." deve ser númerico!");
@@ -104,9 +112,9 @@
         	return true;
         }
         
-        protected function max_length($target, $params)
+        public function max_length($target, $params)
         {
-        	if (strlen($target->getValue()) <= $params['max']) {
+        	if (strlen($target->getValue()) <= $params['max'] && !empty($target->getValue()) || !is_null($target->getValue())) {
         		return true;
         	}
 

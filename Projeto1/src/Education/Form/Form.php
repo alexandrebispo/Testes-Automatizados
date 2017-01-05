@@ -43,7 +43,12 @@
         */
         public function setMethod($method)
         {
-          $this->method = $method;
+          $this->method = strtoupper($method);
+          
+          if ($this->method != "POST" || $this->method != "GET") {
+            throw new \InvalidArgumentException("Erro ao inserir o método.");
+          }
+
           return $this->method;
         }
 
@@ -83,12 +88,23 @@
           $namespace = "Education\\Form\\";
           $className = $namespace . ucfirst(strtolower($fieldName));
           
-          if (class_exists($className))
+          if (!class_exists($className))
           {
-            return new $className($fieldAttributes); 
+            throw new \InvalidArgumentException("Field Criada não existe.");
           }
 
-          return false;
+          return new $className($fieldAttributes);
+        }
+
+        public function populate(array $fielsdDefs = [])
+        {
+            foreach ($fielsdDefs as $fieldName => $value) {
+                $field = $this->findFieldByName($fieldName);
+                $field->setValue($value);
+            }
+
+            return $this->validator->validate();
+
         }
 
         /**
@@ -96,8 +112,6 @@
         */
         public function render($placement = 'inField')
         {
-
-          $this->validator->validate();
 
           if ($placement == 'top' || $placement == 'bottom') {
             foreach ($this->validator->getFieldsWithError() as $field) {

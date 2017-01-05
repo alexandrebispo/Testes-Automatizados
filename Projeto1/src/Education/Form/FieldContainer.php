@@ -35,12 +35,4 @@
                }
             }
         }
-
-        public function populate(array $fielsdDefs = [])
-        {
-            foreach ($fielsdDefs as $fieldName => $value) {
-                $field = $this->findFieldByName($fieldName);
-                $field->setValue($value);
-            }
-        }
     }

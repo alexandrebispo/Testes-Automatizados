@@ -17,6 +17,11 @@
     */
     class Input extends AbstractField implements InputInterface
     {   
+        public function setErrorMessage($message)
+        {
+            $this->attributes['message'] = $message;
+            return $message;
+        }
 
         /**
         * @param string $value
@@ -33,7 +38,7 @@
         */
         public function getValue()
         {
-            if(!is_null($this->attributes['value'])){
+            if(!empty($this->attributes['value'])){
                 return $this->attributes['value'];
             }
 
@@ -56,7 +61,7 @@
             echo "<input ";
 
             foreach ($this->attributes as $attrName => $attrValue) {
-                echo $attrName  .  "='"   .   $attrValue   .   "'";
+                echo $attrName  .  "='"   .   $attrValue   .   "' ";
             }
 
             echo "/><br />";

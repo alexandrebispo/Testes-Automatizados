@@ -8,7 +8,7 @@
     */
 
     namespace Education\Interfaces;
-    use OptionInterface;
+    use Education\interfaces\OptionInterface;
 
 
     interface SelectInterface
