@@ -37,10 +37,10 @@
 
 				foreach ($rules as $rule) {
 					if (isset($rule['params'])) {
-						$this->$rule['rule']($element, $rule['params']);
+						$this->{$rule['rule']}($element, $rule['params']);
                         $this->renderErrorMessages();                        
 					} else {
-						$this->$rule['rule']($element);
+						$this->{$rule['rule']}($element);
                         $this->renderErrorMessages();
                         
                         
