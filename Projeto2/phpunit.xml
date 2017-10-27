@@ -1,0 +1,5 @@
+<phpunit backupGlobals="false"	backupStaticAttributes="false" bootstrap="bootstrap.php" cacheTokens="true" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnfailure="false" syntaxCheck="false" verbose="true">
+	<testsuite name="Education - Testes">
+		<directory>tests</directory>
+	</testsuite>
+</phpunit>

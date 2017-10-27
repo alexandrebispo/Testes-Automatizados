@@ -106,7 +106,7 @@
 			    'valor' => '35',
 			    'descricao' => 'Sapato preto',
 			);
-			
+
 			$form1->getValidator()->addRule(array('element' => $inputNome, 'rules' => array(array('rule' => 'is_required'))));
 			$form1->getValidator()->addRule(array('element' => $inputValor, 'rules' => array(array('rule' => 'is_numeric'))));
 			$form1->getValidator()->addRule(array('element' => $inputdesc, 'rules' => array(array('rule' => 'max_length', 'params' => array('max' => 200)))));
