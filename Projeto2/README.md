@@ -133,7 +133,8 @@ Recomendacoes:
 - Procure usar todos os patterns que foram ensinados até agora para que seu código fique mais organizado
 - Faça métodos e classes pequenos
 
-===============================================================================================================================================================================
+================================
+
 Cobertura das principais classes
 --------------------------------
 
@@ -146,6 +147,7 @@ Observações:
 - Utilize o composer
 
 =================
+
 Testes unitários
 -----------------
 
@@ -154,10 +156,3 @@ Agora você já deve ter criado os testes das principais classes de seu sistema,
 Lembrando que o teste unitário, testa a unidade, logo, se uma classe depende de outra, você deverá utilizar recursos como Mocks, para manipular os resultados a seu favor, para facilitar o processo de teste.
 
 Faça uma revisão para garantir que todos os pontos da sua classe estão testados, principalmente os dados de entrada, que devem ser validados também por testes.
-
-
-Pendencias
-----------
-
-	- Criar os testes da classe option
-	- Criar os testes do model
