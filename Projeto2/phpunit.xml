@@ -1,4 +1,5 @@
-<phpunit backupGlobals="false"	backupStaticAttributes="false" bootstrap="bootstrap.php" cacheTokens="true" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnfailure="false" syntaxCheck="false" verbose="true">
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"	backupStaticAttributes="false" bootstrap="bootstrap.php" cacheTokens="true" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnfailure="false" syntaxCheck="false" verbose="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.0/phpunit.xsd" extensionsDirectory="tools/phpunit.d">
 	<testsuite name="Education - Testes">
 		<directory>tests</directory>
 	</testsuite>

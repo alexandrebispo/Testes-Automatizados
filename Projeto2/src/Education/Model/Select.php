@@ -26,7 +26,7 @@
 			$this->select = $select;
 			$conn = $this->db;
 			//Aqui esta com aspas na variavel ('{$this->select}'), por poder ser do tipo string;
-			$sql = 'INSERT INTO "select"("select") VALUES ("{$this->select}")';
+			$sql = 'INSERT INTO `select` (`select`) VALUES ("'. $this->select .'")';
 			$stmt = $conn->prepare($sql); 
 			$stmt->execute();
 		}

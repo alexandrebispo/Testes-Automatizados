@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<dataset>
+    <table name="select">
+        <column>id</column>
+        <column>select</column>
+        <row>
+            <value>1</value>
+            <value>Alexandre</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>Alice</value>
+        </row>
+        <row>
+            <value>14</value>
+            <value>Amanda</value>
+        </row>
+    </table>
+</dataset>
